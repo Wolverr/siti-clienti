@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trattoria Marradi — Piazza Terralba, Genova</title>
+<meta name="description" content="Trattoria Marradi: cucina casalinga a pranzo in Piazza Terralba, Genova. Menu fisso da 9 €, dal lunedì al venerdì.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Lato:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --carta: #f7f0e3;
+    --carta-scura: #efe4cf;
+    --inchiostro: #2b2118;
+    --grigio: #6b5d4f;
+    --rosso: #9e2b25;
+    --rosso-scuro: #7a1f1a;
+    --verde: #2f4a3a;
+    --lavagna: #263029;
+    --gesso: #f3efe6;
+    --bordo: #d9c9ab;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Lato", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--inchiostro);
+    background: var(--carta);
+  }
+  h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; line-height: 1.15; margin: 0; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+
+  /* Striscia demo: toglierla quando il sito va online */
+  .demo {
+    background: var(--inchiostro);
+    color: var(--carta);
+    text-align: center;
+    font-size: 13px;
+    padding: 6px 12px;
+    letter-spacing: .03em;
+  }
+
+  /* Navigazione */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(247, 240, 227, .95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--bordo);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+  .logo { font-family: "Playfair Display", serif; font-weight: 800; font-size: 20px; text-decoration: none; color: var(--rosso); }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav ul a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--grigio); }
+  nav ul a:hover { color: var(--rosso); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--rosso); color: #fff; text-decoration: none;
+    font-weight: 700; padding: 12px 22px; border-radius: 999px;
+    transition: background .2s, transform .2s;
+  }
+  .btn:hover { background: var(--rosso-scuro); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--inchiostro); border: 2px solid var(--inchiostro); }
+  .btn.ghost:hover { background: var(--inchiostro); color: var(--carta); }
+  .btn.small { padding: 8px 16px; font-size: 15px; }
+
+  /* Hero */
+  .hero {
+    position: relative; overflow: hidden;
+    padding-block: 90px 100px;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(158,43,37,.10), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(47,74,58,.12), transparent 40%);
+  }
+  .hero::after { /* tovaglia a quadri */
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 26px;
+    background:
+      repeating-linear-gradient(90deg, rgba(158,43,37,.85) 0 26px, transparent 26px 52px),
+      repeating-linear-gradient(0deg, rgba(158,43,37,.45) 0 13px, transparent 13px 26px);
+    opacity: .9;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .hero-foto {
+    aspect-ratio: 4 / 4.4; border-radius: 200px 200px 16px 16px; overflow: hidden;
+    border: 8px solid #fffaf0; box-shadow: 0 20px 40px rgba(43,33,24,.18);
+  }
+  .hero-foto img, .galleria img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .galleria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 50px; }
+  .galleria figure { margin: 0; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; position: relative; }
+  .galleria figcaption {
+    position: absolute; left: 10px; bottom: 10px;
+    background: rgba(43,33,24,.75); color: #fff; font-size: 14px; padding: 4px 10px; border-radius: 999px;
+  }
+  .crediti { font-size: 12px; opacity: .7; width: 100%; }
+  .eyebrow { font-family: "Caveat", cursive; font-size: 28px; color: var(--verde); margin-bottom: 6px; }
+  .hero h1 { font-size: clamp(44px, 8vw, 84px); font-weight: 800; color: var(--rosso); }
+  .hero p.lead { font-size: clamp(18px, 2.4vw, 22px); max-width: 560px; color: var(--grigio); margin: 18px 0 30px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .badge {
+    display: inline-block; margin-top: 34px;
+    border: 1px dashed var(--bordo); background: #fffaf0;
+    padding: 10px 16px; border-radius: 10px; font-size: 15px; color: var(--grigio);
+  }
+  .badge strong { color: var(--inchiostro); }
+
+  section { padding-block: 80px; }
+  .titolo { text-align: center; margin-bottom: 44px; }
+  .titolo h2 { font-size: clamp(32px, 5vw, 46px); }
+  .titolo p { color: var(--grigio); margin: 10px auto 0; max-width: 560px; }
+  .fregio { display: block; width: 60px; height: 3px; background: var(--rosso); margin: 16px auto 0; border-radius: 2px; }
+
+  /* Chi siamo */
+  .chi { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
+  .chi p { margin: 0 0 16px; }
+  .punti { display: grid; gap: 14px; }
+  .punto { display: flex; gap: 14px; background: #fffaf0; border: 1px solid var(--bordo); border-radius: 14px; padding: 18px; }
+  .punto .ico { font-size: 26px; line-height: 1; }
+  .punto h3 { font-size: 19px; margin-bottom: 2px; }
+  .punto p { margin: 0; color: var(--grigio); font-size: 15px; }
+
+  /* Menu (lavagna) */
+  .menu-sez { background: var(--carta-scura); }
+  .lavagna {
+    background: var(--lavagna); color: var(--gesso);
+    border: 14px solid #6b4a2f; border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.25), inset 0 0 60px rgba(0,0,0,.35);
+    padding: 44px clamp(20px, 5vw, 56px);
+    max-width: 820px; margin: 0 auto;
+    font-family: "Caveat", cursive;
+  }
+  .lavagna h3 { font-family: "Caveat", cursive; font-size: 40px; text-align: center; font-weight: 600; }
+  .lavagna .sotto { text-align: center; font-size: 22px; opacity: .75; margin-bottom: 26px; }
+  .prezzi { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 34px; }
+  .prezzo { border: 2px dashed rgba(243,239,230,.4); border-radius: 10px; padding: 16px; text-align: center; }
+  .prezzo .cifra { font-size: 56px; line-height: 1; color: #f2c46d; }
+  .prezzo .cosa { font-size: 26px; }
+  .prezzo .det { font-size: 20px; opacity: .75; }
+  .piatti { columns: 2; column-gap: 40px; font-size: 25px; list-style: none; padding: 0; margin: 0; }
+  .piatti li { break-inside: avoid; padding: 4px 0; }
+  .piatti li::before { content: "~ "; opacity: .6; }
+  .lavagna .nota { text-align: center; font-size: 21px; opacity: .7; margin-top: 26px; }
+
+  /* Orari e dove */
+  .info { display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; }
+  .card { background: #fffaf0; border: 1px solid var(--bordo); border-radius: 16px; padding: 30px; }
+  .card h3 { font-size: 26px; margin-bottom: 16px; }
+  table.orari { width: 100%; border-collapse: collapse; }
+  table.orari td { padding: 9px 0; border-bottom: 1px dashed var(--bordo); }
+  table.orari td:last-child { text-align: right; font-weight: 700; }
+  table.orari tr.chiuso td:last-child { color: var(--rosso); }
+  table.orari tr.oggi td { color: var(--verde); }
+  table.orari tr.oggi td:first-child::after { content: " · oggi"; font-size: 13px; font-weight: 700; }
+  .contatti { margin-top: 22px; display: grid; gap: 10px; }
+  .contatti a { text-decoration: none; font-weight: 700; }
+  .mappa { border-radius: 16px; overflow: hidden; border: 1px solid var(--bordo); min-height: 360px; }
+  .mappa iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+
+  /* Chiamata finale */
+  .cta { background: var(--rosso); color: #fff; text-align: center; }
+  .cta h2 { font-size: clamp(30px, 5vw, 44px); }
+  .cta p { opacity: .9; margin: 12px 0 28px; }
+  .cta .btn { background: #fff; color: var(--rosso); }
+  .cta .btn:hover { background: var(--carta); }
+
+  footer { background: var(--inchiostro); color: #cbbfae; font-size: 14px; padding-block: 30px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  /* Bottone chiamata fisso su mobile */
+  .chiama-mobile { display: none; }
+
+  @media (max-width: 800px) {
+    nav ul { display: none; }
+    .chi, .info, .hero .wrap { grid-template-columns: 1fr; }
+    .hero-foto { aspect-ratio: 4 / 3; border-radius: 16px; }
+    .galleria { grid-template-columns: 1fr 1fr; }
+    .galleria figure:first-child { grid-column: 1 / -1; }
+    .piatti { columns: 1; }
+    section { padding-block: 60px; }
+    .hero { padding-block: 60px 80px; }
+    .chiama-mobile {
+      display: flex; justify-content: center;
+      position: fixed; left: 16px; right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    footer { padding-bottom: 100px; }
+  }
+  @media (max-width: 480px) {
+    .prezzi { grid-template-columns: 1fr; }
+    nav .btn.small { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo">Anteprima — proposta di sito per Trattoria Marradi</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Trattoria Marradi</a>
+    <ul>
+      <li><a href="#chi-siamo">Chi siamo</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#orari">Orari e dove</a></li>
+    </ul>
+    <a href="tel:+39010502015" class="btn small">📞 010 502015</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+    <div class="eyebrow">Genova · Piazza Terralba</div>
+    <h1>Trattoria<br>Marradi</h1>
+    <p class="lead">La trattoria di una volta, accanto al mercato di Piazza Terralba. Cucina casalinga, menu fisso e prezzi onesti, a pranzo dal lunedì al venerdì.</p>
+    <div class="actions">
+      <a href="tel:+39010502015" class="btn">📞 Chiama per prenotare</a>
+      <a href="#menu" class="btn ghost">Vedi il menu</a>
+    </div>
+    <div class="badge">Menu completo a <strong>12 €</strong> · Solo primo a <strong>9 €</strong></div>
+    </div>
+    <div class="hero-foto"><img src="../foto/trofie2.jpg" alt="Trofie al pesto"></div>
+  </div>
+</header>
+
+<section id="chi-siamo">
+  <div class="wrap chi">
+    <div>
+      <div class="eyebrow">Chi siamo</div>
+      <h2 style="font-size:clamp(30px,4.5vw,42px);margin-bottom:20px">Una trattoria di famiglia, come quelle di una volta</h2>
+      <p>Ogni giorno, a due passi dal mercato di Piazza Terralba, prepariamo piatti semplici e fatti in casa: quelli che si mangiavano la domenica dalla nonna, ma a pranzo durante la settimana.</p>
+      <p>Niente fronzoli: una tovaglia, un bicchiere di vino, un primo, un secondo con contorno e il caffè. Il menu cambia tutti i giorni, in base a quello che offre il mercato.</p>
+    </div>
+    <div class="punti">
+      <div class="punto"><div class="ico">🍝</div><div><h3>Cucina casalinga</h3><p>Primi, secondi e dolci preparati ogni mattina.</p></div></div>
+      <div class="punto"><div class="ico">🧺</div><div><h3>Accanto al mercato</h3><p>Ingredienti freschi, dal banco alla cucina.</p></div></div>
+      <div class="punto"><div class="ico">💶</div><div><h3>Prezzi onesti</h3><p>Menu fisso completo a 12 €, pausa pranzo senza pensieri.</p></div></div>
+      <div class="punto"><div class="ico">♿</div><div><h3>Accessibile</h3><p>Locale accessibile anche in sedia a rotelle.</p></div></div>
+    </div>
+  </div>
+  <div class="wrap galleria">
+    <figure><img src="../foto/trenette.jpg" alt="Pasta" loading="lazy"><figcaption>La pasta</figcaption></figure>
+    <figure><img src="../foto/tiramisu.jpg" alt="Tiramisù" loading="lazy"><figcaption>Dolci fatti in casa</figcaption></figure>
+    <figure><img src="../foto/pannacotta.jpg" alt="Panna cotta" loading="lazy"><figcaption>Panna cotta</figcaption></figure>
+  </div>
+</section>
+
+<section id="menu" class="menu-sez">
+  <div class="wrap">
+    <div class="titolo">
+      <h2>Il menu</h2>
+      <p>Menu fisso a pranzo. I piatti cambiano ogni giorno: chiamaci per sapere cosa c'è oggi.</p>
+      <span class="fregio"></span>
+    </div>
+    <div class="lavagna">
+      <h3>Oggi a pranzo</h3>
+      <div class="sotto">dal lunedì al venerdì</div>
+      <div class="prezzi">
+        <div class="prezzo">
+          <div class="cifra">12 €</div>
+          <div class="cosa">Menu completo</div>
+          <div class="det">primo, secondo con contorno, caffè</div>
+        </div>
+        <div class="prezzo">
+          <div class="cifra">9 €</div>
+          <div class="cosa">Solo primo</div>
+          <div class="det">per una pausa veloce</div>
+        </div>
+      </div>
+      <ul class="piatti">
+        <li>Trofie al pesto</li>
+        <li>Penne panna, piselli e prosciutto</li>
+        <li>Crespelle al salmone</li>
+        <li>Stoccafisso</li>
+        <li>Bollito misto (il martedì)</li>
+        <li>Arrosto con patate</li>
+        <li>Pollo al curry</li>
+        <li>Smeriglio con olive e capperi</li>
+        <li>Frittata</li>
+        <li>Dolci fatti in casa</li>
+      </ul>
+      <div class="nota">Esempi dei nostri piatti — il menu del giorno può variare</div>
+    </div>
+  </div>
+</section>
+
+<section id="orari">
+  <div class="wrap">
+    <div class="titolo">
+      <h2>Orari e dove siamo</h2>
+      <span class="fregio"></span>
+    </div>
+    <div class="info">
+      <div class="card">
+        <h3>Orari</h3>
+        <table class="orari" id="tabella-orari">
+          <tr data-g="1"><td>Lunedì</td><td>12:00 – 15:30</td></tr>
+          <tr data-g="2"><td>Martedì</td><td>12:00 – 15:30</td></tr>
+          <tr data-g="3"><td>Mercoledì</td><td>12:00 – 15:30</td></tr>
+          <tr data-g="4"><td>Giovedì</td><td>12:00 – 15:30</td></tr>
+          <tr data-g="5"><td>Venerdì</td><td>12:00 – 15:30</td></tr>
+          <tr data-g="6" class="chiuso"><td>Sabato</td><td>Chiuso</td></tr>
+          <tr data-g="0" class="chiuso"><td>Domenica</td><td>Chiuso</td></tr>
+        </table>
+        <div class="contatti">
+          <div>📍 Piazza Terralba 21r, 16143 Genova</div>
+          <a href="tel:+39010502015">📞 010 502015</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Trattoria+Marradi+Piazza+Terralba+21r+Genova" target="_blank" rel="noopener">🧭 Indicazioni stradali →</a>
+        </div>
+      </div>
+      <div class="mappa">
+        <iframe title="Mappa Trattoria Marradi" loading="lazy"
+          src="https://www.google.com/maps?q=Trattoria+Marradi,+Piazza+Terralba+21r,+Genova&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Vieni a pranzo da noi</h2>
+    <p>Per gruppi o per sapere il menu del giorno, chiamaci.</p>
+    <a href="tel:+39010502015" class="btn">📞 010 502015</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="anno"></span> Trattoria Marradi · Piazza Terralba 21r, Genova</div>
+    <div>Pranzo · Lun–Ven 12:00–15:30</div>
+    <div class="crediti">Foto di esempio da Wikimedia Commons: Pastalovers (CC BY-SA 4.0), Popo le Chien (CC0), Syced (CC0), hiro (CC BY-SA 2.0).</div>
+  </div>
+</footer>
+
+<a href="tel:+39010502015" class="btn chiama-mobile">📞 Chiama per prenotare</a>
+
+<script>
+  document.getElementById("anno").textContent = new Date().getFullYear();
+  const oggi = new Date().getDay();
+  const riga = document.querySelector('#tabella-orari tr[data-g="' + oggi + '"]');
+  if (riga) riga.classList.add("oggi");
+</script>
+</body>
+</html>

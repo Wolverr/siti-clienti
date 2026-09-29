@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Guida alla visita — Proposta siti web</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 14mm 15mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", Arial, sans-serif; font-size: 10pt; line-height: 1.45; color: #1f2328; margin: 0; }
+  h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; line-height: 1.2; }
+  h1 { font-size: 26pt; margin: 0 0 4px; color: #7a1f1a; }
+  h2 { font-size: 16pt; color: #7a1f1a; margin: 20px 0 8px; padding-bottom: 5px; border-bottom: 2px solid #e8d9c4; break-after: avoid; }
+  h3 { font-size: 12pt; margin: 18px 0 6px; break-after: avoid; }
+  p { margin: 0 0 8px; }
+  ul { margin: 4px 0 10px; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  .sottotitolo { color: #5b6168; font-size: 11pt; margin-bottom: 18px; }
+  .nuova-pagina { break-before: page; }
+
+  .risposta { background: #f4efe6; border-left: 5px solid #7a1f1a; padding: 14px 18px; border-radius: 6px; margin: 14px 0; }
+  .risposta strong.grande { display: block; font-family: "Source Serif 4", serif; font-size: 14pt; margin-bottom: 6px; }
+  .box { border: 1px solid #e3d6c2; border-radius: 6px; padding: 12px 16px; margin: 10px 0; break-inside: avoid; }
+  .box.verde { border-color: #b9d3b5; background: #f3f8f2; }
+  .box.giallo { border-color: #ecd9a3; background: #fdf8ea; }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 10pt; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e8e1d6; vertical-align: top; }
+  th { background: #f4efe6; font-weight: 700; }
+
+  /* Copione */
+  .fase { margin: 14px 0 4px; font-weight: 700; color: #7a1f1a; text-transform: uppercase; letter-spacing: .06em; font-size: 9pt; break-after: avoid; }
+  .battuta { display: grid; grid-template-columns: 78px 1fr; gap: 10px; margin: 4px 0; break-inside: avoid; }
+  .chi { font-weight: 700; font-size: 9.5pt; padding-top: 1px; }
+  .chi.n { color: #1f4e6b; } .chi.j { color: #3f7a3a; } .chi.t { color: #8a6d1d; }
+  .testo { background: #fafafa; border-radius: 6px; padding: 5px 10px; }
+  .chi.t + .testo { background: #fdf8ea; font-style: italic; }
+  .regia { color: #5b6168; font-style: italic; font-size: 9.5pt; margin: 4px 0 4px 88px; }
+
+  .obiezione { break-inside: avoid; margin: 10px 0; }
+  .obiezione .dom { font-weight: 700; }
+  .obiezione .ris { margin-left: 16px; padding-left: 10px; border-left: 3px solid #b9d3b5; }
+
+  .check li { list-style: none; margin-left: -18px; }
+  .check li::before { content: "☐  "; }
+
+  .biglietti { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 14px; }
+  .biglietto { border: 1px dashed #999; padding: 16px 18px; height: 52mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .biglietto .nomi { font-family: "Source Serif 4", serif; font-size: 13pt; font-weight: 700; color: #7a1f1a; }
+  .biglietto .ruolo { font-size: 9.5pt; color: #5b6168; }
+  .biglietto .contatti { font-size: 9.5pt; line-height: 1.7; }
+  .piccolo { font-size: 9pt; color: #5b6168; }
+</style>
+</head>
+<body>
+
+<h1>Guida alla visita</h1>
+<div class="sottotitolo">Proposta di siti web per le trattorie di Piazza Terralba — Nicolas Polverini e Jewel Bency</div>
+
+<div class="risposta">
+  <strong class="grande">Prima il sito, poi le specifiche.</strong>
+  Entrate con il sito già pronto sul telefono, mostratelo subito e <em>solo dopo</em> fate le domande. I motivi:
+  <ul>
+    <li><strong>Il titolare non sa immaginare un sito.</strong> Se gli chiedete "cosa vorrebbe nel sito?", la risposta sarà quasi sempre "non so, non mi serve". Se glielo mostrate, reagisce a qualcosa di concreto.</li>
+    <li><strong>Dimostra che siete capaci</strong>, prima ancora di parlare di prezzo. Avete già lavorato per lui: è la migliore credenziale che avete.</li>
+    <li><strong>Le domande diventano naturali:</strong> non è più un interrogatorio, ma "verifichiamo insieme se è tutto giusto". Ogni risposta migliora il <em>suo</em> sito.</li>
+  </ul>
+</div>
+
+<h2>1. Organizzazione della giornata</h2>
+<p>Le due trattorie sono sulla <strong>stessa piazza</strong> e sono aperte <strong>solo a pranzo</strong>: il momento migliore è subito dopo il servizio, quando i clienti se ne vanno e il titolare ha qualche minuto. Da evitare assolutamente la fascia 12:00–14:30.</p>
+<table>
+  <tr><th>Locale</th><th>Indirizzo</th><th>Aperto</th><th>Quando passare</th></tr>
+  <tr><td>Trattoria Vegia Terralba</td><td>Piazza Terralba 34r</td><td>Lun–Sab, 12:00–15:00</td><td><strong>14:45–15:15</strong> (o 10:30–11:15)</td></tr>
+  <tr><td>Trattoria Marradi</td><td>Piazza Terralba 21r</td><td>Lun–Ven, 12:00–15:30</td><td><strong>15:15–15:45</strong> (o 10:30–11:15)</td></tr>
+</table>
+<p>Andate in un giorno <strong>dal lunedì al venerdì</strong> (Marradi il sabato è chiuso). Gli altri 3–4 locali della giornata: la mattina tra le 10:00 e le 11:30 (prima del servizio) oppure dalle 15:00 alle 18:00, in base agli orari di ciascuno. Contate circa 15–20 minuti per visita più gli spostamenti.</p>
+
+<h3>Ruoli</h3>
+<ul>
+  <li><strong>Nicolas</strong> — conduce la conversazione: presentazione, proposta, prezzo, chiusura.</li>
+  <li><strong>Jewel</strong> — tiene il telefono con il sito e lo mostra; prende appunti sulle risposte alle domande; interviene sulle parti tecniche.</li>
+</ul>
+<p>Avere due ruoli chiari dà un'immagine più professionale: nessuno dei due resta in piedi senza fare niente e nessuno si sovrappone.</p>
+
+<h3>Da preparare prima di uscire</h3>
+<ul class="check">
+  <li>Siti aperti e provati sul telefono <strong>senza Wi-Fi</strong> (i file sono in <em>siti-clienti\da-mostrare</em>)</li>
+  <li>Telefono carico al 100% + powerbank</li>
+  <li>Biglietti con i vostri contatti stampati e ritagliati (ultima pagina)</li>
+  <li>Un blocchetto o l'app note per le risposte, un foglio per ogni locale</li>
+  <li>Questa guida riletta almeno una volta ad alta voce, provando i ruoli</li>
+  <li>Abbigliamento ordinato e semplice (niente di eccessivo: siete studenti, va benissimo così)</li>
+</ul>
+
+<h2 class="nuova-pagina">2. Il copione — dall'ingresso all'uscita</h2>
+<p class="piccolo">Esempio per la Trattoria Marradi. Per gli altri locali cambiano solo il nome e i dettagli. Non serve impararlo a memoria: tenete la struttura e le frasi chiave, e parlate in modo naturale. Date sempre del <strong>Lei</strong>.</p>
+
+<div class="fase">① Ingresso</div>
+<div class="regia">Entrate insieme, salutate chi è al bancone. Telefono in tasca, non in mano.</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Buongiorno! Scusi il disturbo, potrei parlare con il titolare o con chi si occupa della gestione del locale?</div></div>
+<div class="regia">Se chi vi risponde non è il titolare:</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Nessun problema. Mi chiamo Nicolas Polverini: siamo due studenti di Informatica e abbiamo preparato una proposta per il vostro locale che vorremmo mostrare al titolare, ci vogliono cinque minuti. Secondo Lei quando è il momento migliore per trovarlo?</div></div>
+<div class="regia">Segnatevi giorno e ora, lasciate un biglietto, ringraziate e uscite. Se invece il titolare c'è:</div>
+
+<div class="fase">② Presentazione</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Buongiorno, piacere, sono Nicolas Polverini e lui è il mio collega Jewel Bency. Siamo due studenti al terzo anno di Informatica e stiamo avviando le nostre prime collaborazioni con le attività del quartiere. Ha cinque minuti? Se non è il momento giusto, ripassiamo volentieri quando preferisce.</div></div>
+<div class="battuta"><div class="chi t">Titolare</div><div class="testo">Sì, dite pure.</div></div>
+
+<div class="fase">③ Il motivo della visita</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Cercando le trattorie di Piazza Terralba su Google abbiamo notato che la Trattoria Marradi non ha un sito internet. Chi vi cerca trova solo schede su TripAdvisor o su altri portali, spesso incomplete o con informazioni diverse tra loro: per esempio, in una il menu fisso costa 10 euro, in un'altra 12. Per questo ci siamo permessi di prepararvi una bozza di sito, senza alcun impegno.</div></div>
+
+<div class="fase">④ Mostrare il sito</div>
+<div class="regia">Jewel tira fuori il telefono, apre il sito e lo porge al titolare, lasciandoglielo tenere in mano.</div>
+<div class="battuta"><div class="chi j">Jewel</div><div class="testo">Glielo faccio vedere direttamente dal telefono, perché è da lì che lo guarderebbe la maggior parte dei clienti. In alto c'è il nome del locale e questo bottone: il cliente lo tocca e parte subito la chiamata al vostro numero.</div></div>
+<div class="battuta"><div class="chi j">Jewel</div><div class="testo">Scorrendo c'è la presentazione della trattoria, poi il menu fisso con i prezzi e alcuni dei vostri piatti. Qui ci sono gli orari — il giorno di oggi viene evidenziato in automatico — e qui la mappa con le indicazioni per arrivare.</div></div>
+<div class="battuta"><div class="chi j">Jewel</div><div class="testo">Le foto per ora sono provvisorie: nella versione definitiva metteremmo quelle dei vostri piatti e della vostra sala.</div></div>
+<div class="regia">Fermatevi. Lasciate che guardi e commenti in silenzio: la prima reazione vi dice molto.</div>
+
+<div class="fase">⑤ Le domande</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Naturalmente è una bozza: alcune informazioni le abbiamo prese da Internet e vorremmo verificarle con Lei. Posso farLe qualche domanda veloce?</div></div>
+<div class="regia">Fate 4–6 domande, non di più (le più importanti sono segnate ★ nella sezione 5). Jewel prende appunti. Il resto lo chiederete se accetta.</div>
+
+<div class="fase">⑥ La proposta</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">La nostra proposta è questa: completiamo il sito con le vostre informazioni e le vostre foto, gli diamo un indirizzo proprio, per esempio <em>trattoriamarradi.it</em>, e lo mettiamo online entro una settimana. Vi aiutiamo anche a collegarlo alla scheda di Google Maps, così chi vi cerca lo trova subito.</div></div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Il costo è di 300 euro una tantum, con indirizzo e primo anno di hosting inclusi. Dal secondo anno sono 12 euro al mese, che coprono l'hosting e gli aggiornamenti: se cambiate il menu o gli orari, ci mandate un messaggio e lo aggiorniamo noi.</div></div>
+<div class="regia">Dopo aver detto il prezzo, <strong>state zitti</strong> e aspettate la risposta. Non riempite il silenzio e non abbassate il prezzo da soli.</div>
+
+<div class="fase">⑦ La chiusura — se dice sì</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Perfetto, ci fa molto piacere! Allora i prossimi passi sono semplici: fissiamo un giorno in cui passiamo a fare qualche foto della sala e dei piatti, Le mandiamo il sito completo da controllare e, quando Le va bene, lo mettiamo online. Chiediamo un acconto di 150 euro alla conferma e il saldo quando il sito è online. Le rilasciamo regolare ricevuta.</div></div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Le lascio il nostro biglietto. Mi può dare un numero o un'email dove mandarLe il riepilogo?</div></div>
+
+<div class="fase">⑦ La chiusura — se dice "ci penso"</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Certo, è giusto pensarci. Le lasciamo il nostro biglietto. Se per Lei va bene, ripassiamo o La chiamiamo la settimana prossima, diciamo giovedì? Nel frattempo teniamo la bozza pronta.</div></div>
+
+<div class="fase">⑦ La chiusura — se dice no</div>
+<div class="battuta"><div class="chi n">Nicolas</div><div class="testo">Nessun problema, La ringraziamo per il tempo che ci ha dedicato. Se in futuro cambiasse idea, ci trova a questo numero. Buona giornata!</div></div>
+
+<div class="fase">⑧ Uscita</div>
+<div class="regia">Stretta di mano, sorriso, uscite. Appena fuori (non davanti alla vetrina) scrivete subito: esito, nome del titolare, cosa gli è piaciuto, obiezioni, data del ricontatto.</div>
+
+<h2 class="nuova-pagina">3. Le obiezioni più frequenti</h2>
+<p>Un "no" iniziale è normale e spesso non è definitivo. Rispondete con calma, senza insistere più di una volta.</p>
+
+<div class="obiezione"><div class="dom">«Non mi serve, i clienti ce li ho già.»</div>
+<div class="ris">La capisco, e infatti il locale funziona bene grazie al passaparola. Il sito non serve per i clienti abituali, ma per chi non vi conosce ancora: chi lavora in zona, chi si è appena trasferito, chi cerca "trattoria vicino a me" sul telefono. Oggi quelle persone vedono prima gli altri locali.</div></div>
+
+<div class="obiezione"><div class="dom">«Costa troppo.»</div>
+<div class="ris">Capisco. Sono 300 euro una volta sola: bastano pochi clienti nuovi a pranzo per ripagarli. Siamo agli inizi, per questo i nostri prezzi sono molto più bassi di quelli di un'agenzia. Se preferisce, possiamo dividere il pagamento in due.</div></div>
+
+<div class="obiezione"><div class="dom">«Ci sono già TripAdvisor e Facebook.»</div>
+<div class="ris">Sono utili, ma lì le informazioni non le controlla Lei: su due siti diversi il vostro menu ha prezzi diversi. Il sito è l'unico posto dove decidete voi cosa vede il cliente, e possiamo collegarlo a quelle pagine.</div></div>
+
+<div class="obiezione"><div class="dom">«Non ho tempo per starci dietro.» / «Non sono pratico di Internet.»</div>
+<div class="ris">Non deve fare niente: ci servono solo le foto e dieci minuti per verificare le informazioni. Tutti gli aggiornamenti li facciamo noi, basta un messaggio.</div></div>
+
+<div class="obiezione"><div class="dom">«E se poi sparite?»</div>
+<div class="ris">È una domanda giusta. Il saldo lo paga solo quando il sito è online e Le piace, e il dominio viene registrato a nome del locale, quindi resta sempre vostro.</div></div>
+
+<div class="obiezione"><div class="dom">«Siete studenti, avete già fatto altri siti?»</div>
+<div class="ris">Questo è uno dei nostri primi lavori, ed è proprio per questo che teniamo un prezzo così basso e ci mettiamo il massimo della cura. Il sito che vede l'abbiamo fatto noi, per voi.</div></div>
+
+<div class="box giallo"><strong>Regole d'oro:</strong> non parlate male dei concorrenti; non promettete "più clienti garantiti"; non usate termini tecnici (hosting, dominio, responsive…) se non ve li chiedono: dite "indirizzo del sito", "funziona bene sul telefono"; non abbassate il prezzo al primo "costa troppo".</div>
+
+<h2>4. Domande scomode (e come rispondere)</h2>
+<div class="box verde"><strong>Se non sapete la risposta, non inventate.</strong> Dite: «Ottima domanda. Non voglio darLe un'informazione sbagliata: verifico e Le faccio sapere entro domani.» Poi scrivetela e rispondete davvero il giorno dopo. Un «non lo so, verifico» detto con calma è molto più professionale di una risposta improvvisata.</div>
+
+<h3>Su di voi</h3>
+<div class="obiezione"><div class="dom">«Avete la partita IVA? Mi fate fattura?»</div>
+<div class="ris">Al momento no: siamo agli inizi e lavoriamo con ricevuta per prestazione occasionale, che è del tutto regolare. Se per Lei la fattura è indispensabile, ce lo dica e verifichiamo come fare.</div></div>
+
+<div class="obiezione"><div class="dom">«Siete di un'agenzia? Chi vi manda?»</div>
+<div class="ris">Nessuno: siamo due studenti e lavoriamo in proprio. Per questo non ci sono intermediari e i prezzi sono bassi. Tratta direttamente con chi fa il sito.</div></div>
+
+<div class="obiezione"><div class="dom">«E quando finite l'università? Se vi trasferite?»</div>
+<div class="ris">Il sito continua a funzionare lo stesso. Il dominio è intestato al locale e Le consegniamo tutti i file: se un giorno non potessimo più seguirlo, chiunque potrebbe continuare a gestirlo al posto nostro.</div></div>
+
+<h3>Sul sito di prova</h3>
+<div class="obiezione"><div class="dom">«Chi vi ha dato il permesso di usare il nome del mio locale?» / «Dove avete preso le informazioni e le foto?»</div>
+<div class="ris">Le informazioni vengono dalle schede pubbliche su Internet, come TripAdvisor. Le foto sono immagini di esempio a uso libero. La bozza non è online: esiste solo sul nostro telefono per mostrargliela, e senza il Suo consenso non verrà mai pubblicata.</div></div>
+
+<div class="obiezione"><div class="dom">«E se non lo voglio, cosa ne fate?»</div>
+<div class="ris">Lo cancelliamo. Non lo pubblichiamo e non lo usiamo da nessuna parte senza il Suo permesso.</div></div>
+
+<h3>Su soldi e condizioni</h3>
+<div class="obiezione"><div class="dom">«Cosa sono i 12 € al mese? Cosa pagate voi?»</div>
+<div class="ris">Coprono lo spazio dove il sito è ospitato, il rinnovo annuale dell'indirizzo e soprattutto gli aggiornamenti: ogni volta che cambia menu, prezzi, orari o ferie, ci manda un messaggio e lo sistemiamo noi.</div></div>
+
+<div class="obiezione"><div class="dom">«E se smetto di pagare il mensile?»</div>
+<div class="ris">Nessuna penale e nessun vincolo. Il sito va offline, ma l'indirizzo resta Suo e Le consegniamo i file, così può rimetterlo online quando e con chi vuole.</div></div>
+
+<div class="obiezione"><div class="dom">«Mi fate uno sconto?»</div>
+<div class="ris">Il prezzo è già da studenti. Possiamo però fare così: se, quando il sito è online, ci lascia una recensione e ci permette di mostrarlo ad altri locali come esempio, Le togliamo 50 euro. <span class="piccolo">(Decidete prima tra voi due fino a dove potete scendere.)</span></div></div>
+
+<div class="obiezione"><div class="dom">«Quanto ci mettete? E se poi non mi piace?»</div>
+<div class="ris">Circa una settimana da quando abbiamo le foto e le informazioni. Le modifiche sono comprese finché il risultato non La convince, e il saldo lo paga solo quando è soddisfatto.</div></div>
+
+<div class="obiezione"><div class="dom">«Con Wix o simili me lo faccio da solo.» / «Me lo fa gratis mio nipote.»</div>
+<div class="ris">Certo, si può fare. Con quei servizi però paga comunque un abbonamento mensile e il sito lo deve costruire e aggiornare Lei. Con noi è già pronto, e non deve toccare niente. Se Suo nipote ha tempo di seguirlo, è un'ottima soluzione anche quella.</div></div>
+
+<h3>Sui risultati</h3>
+<div class="obiezione"><div class="dom">«Mi garantite che arrivano più clienti?»</div>
+<div class="ris">Onestamente no, nessuno può garantirlo, e diffidi da chi lo fa. Quello che possiamo garantire è che chi cerca il vostro locale troverà informazioni giuste e un bottone per chiamarvi. Possiamo anche dirLe ogni mese quante persone hanno visitato il sito.</div></div>
+
+<div class="obiezione"><div class="dom">«Comparirò primo su Google?»</div>
+<div class="ris">Il primo posto per "trattoria Genova" nessuno può prometterlo. Chi cerca il nome del locale, però, troverà il vostro sito, e colleghiamo la scheda di Google Maps, che in zona è quella che conta di più.</div></div>
+
+<h3>Tecniche</h3>
+<div class="obiezione"><div class="dom">«E la privacy, il GDPR, i cookie?»</div>
+<div class="ris">Il sito non raccoglie dati dei clienti: non ci sono moduli né registrazioni. Aggiungiamo comunque l'informativa privacy e, se serve, il banner per i cookie, così è tutto in regola.</div></div>
+
+<div class="obiezione"><div class="dom">«Potete fare anche le prenotazioni online, gli ordini, il menu con il QR code?»</div>
+<div class="ris">Sì. Il menu con QR code sul tavolo è semplice e lo possiamo includere; per prenotazioni e ordini online Le facciamo un preventivo a parte. Intanto partiamo dal sito, poi si aggiunge.</div></div>
+
+<div class="obiezione"><div class="dom">«Mi gestite anche Instagram e Facebook?»</div>
+<div class="ris">Non è il nostro servizio principale, ma possiamo collegarli al sito. Se Le interessa la gestione vera e propria, ne parliamo a parte.</div></div>
+
+<div class="obiezione"><div class="dom">«Posso modificarlo da solo?»</div>
+<div class="ris">Volendo sì, ma non serve: gli aggiornamenti sono compresi nel mensile, basta un messaggio.</div></div>
+
+<h2>5. Domande per la Trattoria Marradi</h2>
+<p class="piccolo">★ = da fare già alla prima visita. Le altre dopo il sì, quando si completa il sito.</p>
+
+<h3>Informazioni da verificare</h3>
+<ul>
+  <li>★ Il menu fisso costa 12 € completo e 9 € solo primo? (Online si trova anche "10 € caffè compreso")</li>
+  <li>★ Cosa è compreso nel menu completo: contorno, acqua, vino, caffè?</li>
+  <li>★ Gli orari sono giusti: solo pranzo, dal lunedì al venerdì, 12:00–15:30? Chiudete per ferie in qualche periodo?</li>
+  <li>★ Il numero 010 502015 è corretto? Avete un cellulare da usare per WhatsApp?</li>
+  <li>Il nome giusto è "Trattoria Marradi" o "Le Locandiere"? (TripAdvisor usa entrambi)</li>
+  <li>Il locale è accessibile in sedia a rotelle?</li>
+</ul>
+
+<h3>La cucina</h3>
+<ul>
+  <li>★ Quali sono i piatti che i clienti chiedono di più?</li>
+  <li>Ci sono piatti fissi in certi giorni? (per esempio il bollito del martedì, lo stoccafisso)</li>
+  <li>Avete opzioni vegetariane o per celiaci?</li>
+  <li>Vi piacerebbe pubblicare il menu del giorno? Come vi è più comodo mandarlo: una foto su WhatsApp ogni mattina?</li>
+</ul>
+
+<h3>Clienti e servizi</h3>
+<ul>
+  <li>★ Accettate buoni pasto? Quali? (per chi lavora in zona è fondamentale)</li>
+  <li>Accettate prenotazioni? Fate pranzi per gruppi o per aziende?</li>
+  <li>Fate asporto?</li>
+  <li>Quali pagamenti accettate (contanti, carte, bancomat)?</li>
+</ul>
+
+<h3>La storia</h3>
+<ul>
+  <li>Da quanti anni siete aperti? È una gestione di famiglia?</li>
+  <li>Da dove viene il nome "Marradi"?</li>
+</ul>
+
+<h3>Per completare il sito</h3>
+<ul>
+  <li>Possiamo passare a fare qualche foto della sala e dei piatti? Che giorno e che ora vi disturba meno?</li>
+  <li>Avete accesso alla scheda Google Maps del locale? (serve per aggiungere il link al sito)</li>
+  <li>Avete una pagina Facebook o Instagram da collegare?</li>
+  <li>È Lei che decide per il locale, o ne dobbiamo parlare anche con qualcun altro?</li>
+  <li>A che numero o email possiamo mandarLe il riepilogo e la bozza definitiva?</li>
+</ul>
+
+<h2 class="nuova-pagina">6. Domande per la Trattoria Vegia Terralba</h2>
+<ul>
+  <li>★ Online ci sono tre numeri diversi (347 844 0228, 345 330 9242, 350 166 7084): quale usiamo per le chiamate e quale per WhatsApp?</li>
+  <li>★ Il menu fisso è 11 € (primo, secondo, contorno, acqua e ¼ di vino) e 12 € quello "tradizione ligure" col pesto? Sono prezzi aggiornati?</li>
+  <li>★ Gli orari sono dal lunedì al sabato, 12:00–15:00?</li>
+  <li>★ Fate ancora asporto, consegna a domicilio e Just Eat? In che zona consegnate?</li>
+  <li>★ Accettate buoni pasto?</li>
+  <li>Quali sono i piatti più richiesti? Avete prezzi alla carta da mettere nel sito?</li>
+  <li>Il dehors estivo c'è ancora? Da che mese a che mese?</li>
+  <li>Da quanti anni siete aperti? Da dove viene il nome "Vegia"?</li>
+  <li>La pagina Facebook è attiva? La colleghiamo al sito?</li>
+  <li>Possiamo passare a fare le foto della sala e dei piatti?</li>
+</ul>
+
+<h2>7. Domande valide per qualsiasi locale</h2>
+<ul>
+  <li>Prezzi, orari, giorni di chiusura e ferie sono corretti?</li>
+  <li>Quali sono i vostri piatti più richiesti / il vostro punto forte?</li>
+  <li>Come preferite che i clienti vi contattino: telefono, WhatsApp, email?</li>
+  <li>Fate asporto, consegna o eventi? Accettate buoni pasto e carte?</li>
+  <li>Avete foto del locale, o possiamo farle noi?</li>
+  <li>Avete social o una scheda Google da collegare?</li>
+  <li>Chi prende la decisione?</li>
+</ul>
+
+<h2>8. Dopo la visita</h2>
+<ul>
+  <li><strong>Subito:</strong> annotate esito, nome del titolare, obiezioni, data del ricontatto.</li>
+  <li><strong>Se "ci penso":</strong> ricontattate nel giorno concordato (non prima, non dopo). Un solo promemoria, poi lasciate stare.</li>
+  <li><strong>Se sì:</strong> entro 24 ore mandate un messaggio di riepilogo con prezzo, cosa è incluso e tempi di consegna.</li>
+  <li><strong>Se no:</strong> nessun problema. Ogni visita vi rende più sciolti per la successiva: l'obiettivo è 1 sì su 5–6 visite.</li>
+</ul>
+<div class="box verde"><strong>Prezzi di riferimento:</strong> 300 € una tantum (sito completo, indirizzo e primo anno di hosting inclusi), poi 12 €/mese per hosting e aggiornamenti. Acconto del 50% alla conferma, saldo alla messa online. Per i primi lavori potete emettere ricevuta per <em>prestazione occasionale</em>; quando il giro cresce, sentite un commercialista.</div>
+
+<h2 class="nuova-pagina">9. Biglietti da lasciare</h2>
+<p class="piccolo">Completate numero ed email, stampate e ritagliate lungo le linee tratteggiate.</p>
+<div class="biglietti">
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+  <div class="biglietto"><div><div class="nomi">Nicolas Polverini · Jewel Bency</div><div class="ruolo">Siti web per ristoranti e attività di quartiere</div></div><div class="contatti">📞 ______________________<br>✉️ ______________________</div></div>
+</div>
+
+</body>
+</html>
