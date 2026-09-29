@@ -1,0 +1,9 @@
+Font usati nei siti, scaricati da Google Fonts (solo i caratteri latini) e ospitati insieme ai siti,
+così funzionano anche senza Internet e non si caricano risorse da server di Google.
+
+- Bodoni Moda — Owen Earl (indestructible type*)
+- Schibsted Grotesk — Schibsted, Bakken & Bæck
+- Fraunces — Undercase Type (Phaedra Charles, Flavia Zimbardi)
+- Figtree — Erik Kennedy
+
+Tutti sono distribuiti con la SIL Open Font License 1.1: https://openfontlicense.org

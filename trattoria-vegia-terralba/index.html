@@ -2,312 +2,521 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trattoria Vegia Terralba — Cucina genovese a Genova</title>
-<meta name="description" content="Trattoria Vegia Terralba: cucina genovese a pranzo in Piazza Terralba. Menu fisso con acqua e vino, asporto e consegna a domicilio.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,500&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trattoria Vegia Terralba — Cucina genovese a pranzo, Genova</title>
+<meta name="description" content="Trattoria Vegia Terralba, Piazza Terralba 34r, Genova. Cucina genovese a pranzo dal lunedì al sabato. Menu fisso da 11 € con acqua e vino. Asporto e consegna a domicilio.">
+<meta name="theme-color" content="#e2b457">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Trattoria Vegia Terralba — Piazza Terralba, Genova">
+<meta property="og:description" content="Cucina genovese a pranzo, dal lunedì al sabato. Menu fisso da 11 € con acqua e vino.">
+<!-- Quando il sito va online: aggiungere og:image e og:url con l'indirizzo definitivo -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5a45'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e2b457' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Trattoria Vegia Terralba",
+  "servesCuisine": ["Genovese", "Ligure"],
+  "priceRange": "€",
+  "telephone": "+39 345 330 9242",
+  "acceptsReservations": true,
+  "hasMenu": "#menu",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Piazza Terralba 34r",
+    "postalCode": "16143",
+    "addressLocality": "Genova",
+    "addressRegion": "GE",
+    "addressCountry": "IT"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 44.407005, "longitude": 8.961286 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "12:00",
+    "closes": "15:00"
+  }]
+}
+</script>
 <style>
+  @font-face { font-family: "Fraunces"; src: url("../font/fraunces.woff2") format("woff2"); font-weight: 400 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Fraunces"; src: url("../font/fraunces-italic.woff2") format("woff2"); font-weight: 400 600; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Figtree"; src: url("../font/figtree.woff2") format("woff2"); font-weight: 400 700; font-style: normal; font-display: swap; }
+
   :root {
-    --sfondo: #fbf6ec;
-    --ocra: #e2a93b;
-    --ocra-chiaro: #f6e3b8;
-    --mare: #1f4e6b;
-    --mare-scuro: #163a50;
-    --basilico: #3f7a3a;
-    --inchiostro: #1d2a33;
-    --grigio: #5b6770;
-    --bordo: #e6d8bb;
-    --carta: #fffdf7;
+    --intonaco: #f6eedc;      /* sfondo, color intonaco chiaro */
+    --ocra: #e2b457;          /* le facciate gialle di Genova */
+    --ocra-scura: #c9953a;
+    --stucco: #f8efdc;        /* cornici dipinte delle finestre */
+    --persiana: #2f5a45;      /* verde persiana */
+    --persiana-scura: #234434;
+    --ardesia: #283034;       /* ardesia ligure */
+    --terracotta: #b0502b;
+    --carta: #fffaf0;
+    --grigio: #5f5a4f;
+    --filo: #e3d3ae;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; font-family: "Nunito Sans", system-ui, sans-serif; font-size: 17px; line-height: 1.6; color: var(--inchiostro); background: var(--sfondo); }
-  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.1; margin: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--intonaco); color: var(--ardesia); font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.02; margin: 0; letter-spacing: -.015em; font-optical-sizing: auto; }
+  p { margin: 0; }
   a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+  img { display: block; max-width: 100%; height: auto; }
+  :focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(1160px, 100% - 40px); margin-inline: auto; }
+  .icona { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .etichetta { font: 700 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--terracotta); }
 
-  .demo { background: var(--inchiostro); color: #fff; text-align: center; font-size: 13px; padding: 6px 12px; letter-spacing: .03em; }
+  /* Striscia demo: da togliere quando il sito va online */
+  .demo { background: var(--ardesia); color: #cfd4d2; text-align: center; font-size: 13px; padding: 7px 16px; }
 
-  nav { position: sticky; top: 0; z-index: 10; background: rgba(251,246,236,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--bordo); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-  .logo { font-family: "Fraunces", serif; font-weight: 800; font-size: 20px; text-decoration: none; color: var(--mare); }
-  .logo span { color: var(--ocra); }
-  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
-  nav ul a { text-decoration: none; font-weight: 700; font-size: 15px; color: var(--grigio); }
-  nav ul a:hover { color: var(--mare); }
+  /* Testata */
+  .testata { position: sticky; top: 0; z-index: 30; background: rgba(246, 238, 220, .93); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--filo); }
+  .testata .wrap { display: flex; align-items: center; gap: 28px; min-height: 66px; }
+  .logo { text-decoration: none; display: flex; flex-direction: column; line-height: 1; white-space: nowrap; }
+  .logo small { font: 700 10.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
+  .logo span { font: 700 23px/1 var(--serif); color: var(--persiana); }
+  .testata nav { margin-left: auto; }
+  .testata ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  .testata nav a { text-decoration: none; font-weight: 600; font-size: 15px; color: var(--grigio); }
+  .testata nav a:hover { color: var(--persiana); }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; background: var(--mare); color: #fff; text-decoration: none; font-weight: 800; padding: 12px 22px; border-radius: 12px; transition: background .2s, transform .2s; }
-  .btn:hover { background: var(--mare-scuro); transform: translateY(-1px); }
-  .btn.wa { background: #1f8f4e; }
-  .btn.wa:hover { background: #17733e; }
-  .btn.ghost { background: transparent; color: var(--mare); border: 2px solid var(--mare); }
-  .btn.small { padding: 8px 14px; font-size: 15px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 50px; padding: 0 24px; border-radius: 10px;
+    background: var(--persiana); color: #fff; text-decoration: none; white-space: nowrap;
+    font: 700 16px/1 var(--sans);
+    transition: background-color .2s, color .2s;
+  }
+  .btn:hover { background: var(--persiana-scura); }
+  .btn.chiaro { background: var(--carta); color: var(--ardesia); box-shadow: inset 0 0 0 1.5px rgba(40, 48, 52, .2); }
+  .btn.chiaro:hover { background: #fff; }
+  .btn.ocra { background: var(--ocra); color: var(--ardesia); }
+  .btn.ocra:hover { background: #ecc16a; }
+  .btn.piccolo { min-height: 40px; padding: 0 16px; font-size: 15px; border-radius: 8px; }
 
-  /* Hero con persiane liguri */
-  .hero { background: var(--ocra-chiaro); position: relative; overflow: hidden; padding-block: 80px; }
-  .hero::before { content: ""; position: absolute; top: 0; right: 0; width: 38%; height: 100%;
-    background: repeating-linear-gradient(0deg, #3d6b4f 0 10px, #2f5840 10px 14px); opacity: .10; }
-  .hero .wrap { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
-  .etichetta { display: inline-block; background: var(--mare); color: #fff; font-weight: 800; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 12px; border-radius: 6px; margin-bottom: 18px; }
-  .hero h1 { font-size: clamp(42px, 7vw, 76px); font-weight: 800; color: var(--mare); }
-  .hero h1 em { font-style: italic; font-weight: 500; color: var(--basilico); display: block; font-size: .62em; margin-top: 6px; }
-  .hero p.lead { font-size: clamp(18px, 2.3vw, 21px); color: var(--grigio); margin: 18px 0 28px; max-width: 520px; }
-  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .hero-foto { border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 3.3; box-shadow: 0 24px 50px rgba(29,42,51,.22); transform: rotate(1.5deg); border: 10px solid var(--carta); }
-  .hero-foto img, .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .stato { display: inline-flex; align-items: center; gap: 9px; font-size: 15.5px; font-weight: 500; }
+  .stato::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+  .stato.aperto::before { background: #2e8a4a; box-shadow: 0 0 0 4px rgba(46, 138, 74, .2); }
+  .stato.chiuso::before { background: var(--terracotta); }
+  .stato b { font-weight: 700; }
 
-  .servizi { background: var(--mare); color: #fff; }
-  .servizi .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding-block: 22px; text-align: center; font-weight: 700; }
-  .servizi span { display: block; font-size: 26px; }
+  /* Apertura: la facciata gialla con la finestra e le persiane */
+  .apertura { background: var(--ocra); position: relative; overflow: hidden; padding: 0; }
+  .apertura::before { /* marcapiano dipinto */
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18px;
+    background: var(--stucco); box-shadow: 0 -4px 0 rgba(40, 48, 52, .08);
+  }
+  .apertura .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 72px); align-items: center; padding-block: clamp(48px, 7vw, 92px) clamp(64px, 8vw, 110px); }
+  .apertura .etichetta { color: var(--ardesia); opacity: .75; }
+  .apertura h1 { font-size: clamp(56px, 8.6vw, 116px); font-weight: 800; margin: 18px 0 24px; color: var(--ardesia); }
+  .apertura h1 small { display: block; font: italic 500 .38em/1 var(--serif); letter-spacing: 0; color: var(--persiana-scura); margin-bottom: .18em; }
+  .apertura .lead { font-size: clamp(18px, 2vw, 21px); line-height: 1.5; max-width: 29em; color: #3d3a31; }
+  .apertura .azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .apertura .stato { margin-top: 26px; color: #3d3a31; }
+  .apertura .stato b { color: var(--ardesia); }
 
-  section { padding-block: 80px; }
-  .titolo { text-align: center; margin-bottom: 44px; }
-  .titolo h2 { font-size: clamp(32px, 5vw, 46px); color: var(--mare); }
-  .titolo p { color: var(--grigio); margin: 10px auto 0; max-width: 580px; }
+  .finestra { position: relative; width: min(46%, 236px); margin: 0 auto 26px; }
+  .finestra .cornice { position: relative; padding: 14px; background: var(--stucco); box-shadow: 0 0 0 3px rgba(40, 48, 52, .06), 0 20px 40px rgba(64, 44, 10, .18); }
+  .finestra .cornice::after { /* davanzale */
+    content: ""; position: absolute; left: -22px; right: -22px; bottom: -18px; height: 18px;
+    background: var(--stucco); box-shadow: 0 8px 14px rgba(64, 44, 10, .18), inset 0 -4px 0 rgba(40, 48, 52, .08);
+  }
+  .finestra img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 55% 50%; }
+  .anta {
+    position: absolute; top: 0; bottom: 0; width: 50%;
+    background:
+      linear-gradient(var(--persiana) 0 0) center 46% / 100% 8px no-repeat,
+      repeating-linear-gradient(to bottom, var(--persiana) 0 8px, var(--persiana-scura) 8px 11px);
+    border: 7px solid var(--persiana);
+    box-shadow: 0 16px 30px rgba(64, 44, 10, .2);
+  }
+  .anta.sx { right: calc(100% + 6px); }
+  .anta.dx { left: calc(100% + 6px); }
 
-  /* Menu fisso */
-  .menu-fissi { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 0 auto 60px; }
-  .fisso { background: var(--carta); border: 1px solid var(--bordo); border-radius: 18px; padding: 30px; position: relative; }
-  .fisso.ligure { border: 2px solid var(--basilico); }
-  .fisso .tag { position: absolute; top: -13px; left: 24px; background: var(--basilico); color: #fff; font-size: 13px; font-weight: 800; padding: 3px 12px; border-radius: 999px; }
-  .fisso h3 { font-size: 26px; }
-  .fisso .cifra { font-family: "Fraunces", serif; font-size: 58px; font-weight: 800; color: var(--ocra); line-height: 1.1; margin: 8px 0; }
-  .fisso ul { margin: 0; padding-left: 20px; color: var(--grigio); }
+  /* Servizi */
+  .servizi { background: var(--ardesia); color: #eef0ec; }
+  .servizi ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .servizi li { display: flex; align-items: center; gap: 14px; padding: 24px 22px; font-weight: 600; line-height: 1.3; }
+  .servizi li + li { border-left: 1px solid rgba(255, 255, 255, .12); }
+  .servizi li:first-child { padding-left: 0; }
+  .servizi .icona { width: 28px; height: 28px; color: var(--ocra); stroke-width: 1.7; }
+  .servizi small { display: block; font-weight: 400; color: #aab3b3; font-size: 14px; margin-top: 2px; }
 
-  .carta-piatti { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .categoria { background: var(--carta); border-radius: 18px; overflow: hidden; border: 1px solid var(--bordo); }
-  .categoria .foto { aspect-ratio: 16 / 10; }
-  .categoria .testo { padding: 22px 24px 26px; }
-  .categoria h3 { font-size: 23px; color: var(--mare); margin-bottom: 10px; }
-  .categoria ul { list-style: none; padding: 0; margin: 0; }
-  .categoria li { padding: 7px 0; border-bottom: 1px dashed var(--bordo); }
-  .categoria li:last-child { border-bottom: 0; }
-  .nota { text-align: center; color: var(--grigio); font-style: italic; margin-top: 26px; }
+  section { padding-block: clamp(64px, 8vw, 100px); scroll-margin-top: 66px; }
+  .intestazione { max-width: 660px; margin-bottom: clamp(36px, 5vw, 52px); }
+  .intestazione h2 { font-size: clamp(38px, 5.4vw, 62px); margin-top: 14px; }
+  .intestazione p { margin-top: 16px; font-size: 18px; color: var(--grigio); }
+
+  /* Menu */
+  .fissi { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .fisso { border-radius: 18px; padding: clamp(26px, 4vw, 38px); background: var(--carta); box-shadow: inset 0 0 0 1px var(--filo); display: flex; flex-direction: column; }
+  .fisso.ligure { background: var(--persiana); color: #f2f1ea; box-shadow: none; }
+  .fisso .testa { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .fisso h3 { font-size: clamp(26px, 3vw, 32px); font-weight: 600; }
+  .fisso .sotto { font-size: 15px; color: var(--grigio); margin-top: 6px; }
+  .fisso.ligure .sotto { color: #c4d2c8; }
+  .fisso .cifra { white-space: nowrap; font: 800 clamp(48px, 6vw, 64px)/1 var(--serif); color: var(--terracotta); letter-spacing: -.02em; }
+  .fisso.ligure .cifra { color: var(--ocra); }
+  .fisso ul { list-style: none; margin: 26px 0 0; padding: 0; border-top: 1px solid var(--filo); }
+  .fisso.ligure ul { border-color: rgba(255, 255, 255, .18); }
+  .fisso li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--filo); font-size: 17px; }
+  .fisso.ligure li { border-color: rgba(255, 255, 255, .18); }
+  .fisso li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ocra-scura); flex: none; }
+  .fisso.ligure li::before { background: var(--ocra); }
+
+  .alla-carta { margin-top: clamp(56px, 7vw, 84px); }
+  .alla-carta > h3 { font-size: clamp(28px, 3.4vw, 38px); font-weight: 600; margin-bottom: 26px; }
+  .portate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .portata { background: var(--carta); border-radius: 18px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--filo); }
+  .portata img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .portata .testo { padding: 22px 24px 24px; }
+  .portata h4 { margin: 0 0 8px; font: 600 24px/1.2 var(--serif); color: var(--persiana); }
+  .portata ul { list-style: none; margin: 0; padding: 0; }
+  .portata li { padding: 9px 0; border-bottom: 1px dashed var(--filo); }
+  .portata li:last-child { border-bottom: 0; }
+  .nota { margin-top: 22px; color: var(--grigio); font-size: 15px; }
 
   /* Asporto */
-  .asporto { background: var(--ocra-chiaro); }
-  .asporto .box { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: center; background: var(--carta); border-radius: 22px; padding: clamp(24px, 5vw, 48px); border: 1px solid var(--bordo); }
-  .asporto h2 { font-size: clamp(28px, 4.5vw, 40px); color: var(--mare); margin-bottom: 12px; }
-  .asporto p { color: var(--grigio); margin: 0 0 22px; }
-  .asporto .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .asporto .icona { font-size: 110px; text-align: center; line-height: 1; }
+  .asporto { background: var(--persiana); color: #f2f1ea; }
+  .asporto .colonne { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .asporto .etichetta { color: var(--ocra); }
+  .asporto h2 { font-size: clamp(38px, 5.4vw, 62px); margin-top: 14px; color: #fff; }
+  .asporto .colonne > div > p { margin-top: 18px; font-size: 18px; color: #d3dfd6; max-width: 32em; }
+  .asporto .azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .passi { list-style: none; margin: 0; padding: 0; counter-reset: passo; }
+  .passi li { counter-increment: passo; display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(255, 255, 255, .16); }
+  .passi li:last-child { border-bottom: 1px solid rgba(255, 255, 255, .16); }
+  .passi li::before { content: counter(passo); display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--ocra); color: var(--ardesia); font: 700 22px/1 var(--serif); }
+  .passi strong { display: block; font: 600 23px/1.2 var(--serif); color: #fff; }
+  .passi span { display: block; margin-top: 4px; color: #c4d2c8; }
 
-  /* Orari */
-  .info { display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; }
-  .card { background: var(--carta); border: 1px solid var(--bordo); border-radius: 18px; padding: 30px; }
-  .card h3 { font-size: 26px; color: var(--mare); margin-bottom: 16px; }
-  table.orari { width: 100%; border-collapse: collapse; }
-  table.orari td { padding: 9px 0; border-bottom: 1px dashed var(--bordo); }
-  table.orari td:last-child { text-align: right; font-weight: 800; }
-  table.orari tr.chiuso td:last-child { color: #b23a2e; }
-  table.orari tr.oggi td { color: var(--basilico); }
-  table.orari tr.oggi td:first-child::after { content: " · oggi"; font-size: 13px; font-weight: 800; }
-  .contatti { margin-top: 22px; display: grid; gap: 10px; }
-  .contatti a { text-decoration: none; font-weight: 800; }
-  .mappa { border-radius: 18px; overflow: hidden; border: 1px solid var(--bordo); min-height: 360px; }
-  .mappa iframe { width: 100%; height: 100%; min-height: 360px; border: 0; display: block; }
+  /* Orari e dove */
+  .dove .colonne { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 72px); align-items: start; }
+  .dove .intestazione h2 { font-size: clamp(38px, 4.4vw, 56px); }
+  .dove .stato { margin-bottom: 22px; font-size: 17px; }
+  .dove .stato b { color: var(--ardesia); }
+  table.orari { width: 100%; border-collapse: collapse; font-size: 16.5px; }
+  table.orari th, table.orari td { padding: 11px 0; border-bottom: 1px solid var(--filo); text-align: left; font-weight: 400; }
+  table.orari td { text-align: right; font-variant-numeric: tabular-nums; }
+  table.orari tr.chiuso td { color: var(--terracotta); }
+  table.orari tr.oggi th, table.orari tr.oggi td { font-weight: 700; }
+  table.orari tr.oggi th::after { content: "oggi"; margin-left: 10px; padding: 3px 9px; border-radius: 99px; background: var(--ocra); color: var(--ardesia); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; vertical-align: 2px; }
+  .dehors { margin-top: 22px; padding: 16px 18px; border-radius: 12px; background: var(--carta); box-shadow: inset 0 0 0 1px var(--filo); display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; }
+  .dehors .icona { color: var(--ocra-scura); width: 22px; height: 22px; margin-top: 1px; }
+  .dove .azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 
-  footer { background: var(--inchiostro); color: #b9c3ca; font-size: 14px; padding-block: 30px; }
-  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
-  .crediti { font-size: 12px; opacity: .7; width: 100%; }
+  .mappa { position: relative; margin: 0; border-radius: 18px; overflow: hidden; background: #f2e6cb; aspect-ratio: 4 / 3.6; box-shadow: inset 0 0 0 1px var(--filo); }
+  .mappa img { width: 100%; height: 100%; object-fit: cover; }
+  .spillo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, calc(-100% + 7px)); display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+  .spillo span { background: var(--persiana); color: #fff; font: 700 14px/1 var(--sans); padding: 9px 12px; border-radius: 8px; white-space: nowrap; box-shadow: 0 6px 16px rgba(40, 48, 52, .25); }
+  .spillo::after { content: ""; width: 14px; height: 14px; margin-top: 8px; border-radius: 50%; background: var(--terracotta); box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(40, 48, 52, .2); }
+  .spillo.sotto { flex-direction: column-reverse; transform: translate(-50%, -7px); }
+  .spillo.sotto::after { margin: 0 0 8px; }
+  .mappa figcaption { position: absolute; right: 10px; bottom: 8px; font-size: 11px; color: var(--grigio); background: rgba(255, 250, 240, .85); padding: 2px 6px; border-radius: 4px; }
+
+  footer { background: var(--ardesia); color: #b7bfbf; font-size: 14.5px; padding-block: 44px; }
+  footer .wrap { display: grid; grid-template-columns: 1fr auto; gap: 18px 40px; }
+  footer .logo span { color: var(--ocra); font-size: 26px; }
+  footer .logo small { color: #b7bfbf; }
+  footer p + p { margin-top: 4px; }
+  footer a { text-decoration: none; }
+  footer .destra { text-align: right; }
+  footer .crediti { grid-column: 1 / -1; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .12); font-size: 12px; color: #8c9696; }
 
   .barra-mobile { display: none; }
 
-  @media (max-width: 860px) {
-    nav ul { display: none; }
-    .hero .wrap, .info, .asporto .box, .menu-fissi { grid-template-columns: 1fr; }
-    .hero-foto { transform: none; }
-    .carta-piatti { grid-template-columns: 1fr; }
-    .servizi .wrap { grid-template-columns: 1fr 1fr; row-gap: 16px; }
-    .asporto .icona { display: none; }
-    section { padding-block: 60px; }
-    .hero { padding-block: 50px 60px; }
-    .fisso.ligure { margin-top: 10px; }
+  @media (max-width: 900px) {
+    .testata nav { display: none; }
+    .testata .btn { margin-left: auto; }
+    .apertura .wrap, .asporto .colonne, .dove .colonne { grid-template-columns: 1fr; }
+    .apertura .wrap { padding-bottom: 88px; }
+    .finestra { width: min(44%, 210px); margin-top: 8px; }
+    .servizi ul { grid-template-columns: 1fr 1fr; }
+    .servizi li { padding: 20px 16px 20px 0; }
+    .servizi li + li { border-left: 0; }
+    .servizi li:nth-child(n + 3) { border-top: 1px solid rgba(255, 255, 255, .12); }
+    .fissi, .portate { grid-template-columns: 1fr; }
+    .portate { gap: 16px; }
+    .portata { display: grid; grid-template-columns: 38% 1fr; }
+    .portata img { height: 100%; aspect-ratio: auto; }
     .barra-mobile {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-      position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 20;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+      background: rgba(246, 238, 220, .96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--filo);
     }
-    .barra-mobile .btn { justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
-    footer { padding-bottom: 100px; }
+    .barra-mobile .btn { min-height: 48px; padding: 0 12px; }
+    footer { padding-bottom: 110px; }
+    footer .wrap { grid-template-columns: 1fr; }
+    footer .destra { text-align: left; }
   }
-  @media (max-width: 480px) { nav .btn.small { display: none; } }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    .testata .btn { display: none; }
+    .apertura .azioni .btn, .asporto .azioni .btn { flex: 1 1 100%; }
+    .servizi ul { grid-template-columns: 1fr; }
+    .servizi li:nth-child(n + 2) { border-top: 1px solid rgba(255, 255, 255, .12); }
+    .servizi li { padding: 16px 0; }
+    .portata { grid-template-columns: 1fr; }
+    .portata img { aspect-ratio: 16 / 9; }
+    .mappa { aspect-ratio: 1 / 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
 </style>
 </head>
 <body>
 
-<div class="demo">Anteprima — proposta di sito per Trattoria Vegia Terralba</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-telefono" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-messaggio" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol>
+  <symbol id="i-direzione" viewBox="0 0 24 24"><path d="M3 11 22 2l-9 19-2-8-8-2z"/></symbol>
+  <symbol id="i-piatto" viewBox="0 0 24 24"><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9zM7 21h10M19.5 12 22 6M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"/></symbol>
+  <symbol id="i-vino" viewBox="0 0 24 24"><path d="M8 22h8M7 10h10M12 15v7M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></symbol>
+  <symbol id="i-borsa" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-sole" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+</svg>
 
-<nav>
-  <div class="wrap">
-    <a href="#" class="logo">Vegia <span>Terralba</span></a>
-    <ul>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#asporto">Asporto</a></li>
-      <li><a href="#orari">Orari e dove</a></li>
-    </ul>
-    <a href="tel:+393453309242" class="btn small">📞 Chiama</a>
-  </div>
-</nav>
+<div class="demo">Anteprima — proposta di sito per la Trattoria Vegia Terralba</div>
 
-<header class="hero">
+<header class="testata">
   <div class="wrap">
-    <div>
-      <div class="etichetta">Genova · Piazza Terralba</div>
-      <h1>Trattoria Vegia Terralba <em>la cucina genovese di una volta</em></h1>
-      <p class="lead">Pesto fatto come si deve, trippa, pesce e dolci della casa. A pranzo dal lunedì al sabato, con un menu fisso completo di acqua e vino.</p>
-      <div class="actions">
-        <a href="tel:+393453309242" class="btn">📞 Prenota un tavolo</a>
-        <a href="https://wa.me/393453309242?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo" class="btn wa">💬 WhatsApp</a>
-      </div>
-    </div>
-    <div class="hero-foto"><img src="../foto/trenette-patate.jpg" alt="Trenette al pesto con patate e fagiolini"></div>
+    <a href="#" class="logo" aria-label="Trattoria Vegia Terralba"><small>Trattoria</small><span>Vegia Terralba</span></a>
+    <nav aria-label="Sezioni">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#asporto">Asporto</a></li>
+        <li><a href="#dove">Orari e dove</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+393453309242" class="btn piccolo"><svg class="icona"><use href="#i-telefono"/></svg>345 330 9242</a>
   </div>
 </header>
 
-<div class="servizi">
-  <div class="wrap">
-    <div><span>🍝</span>Cucina genovese</div>
-    <div><span>🍷</span>Acqua e vino inclusi</div>
-    <div><span>🥡</span>Asporto e domicilio</div>
-    <div><span>☀️</span>Dehors in estate</div>
-  </div>
-</div>
-
-<section id="menu">
-  <div class="wrap">
-    <div class="titolo">
-      <h2>Il nostro menu</h2>
-      <p>A pranzo puoi scegliere il menu fisso o ordinare alla carta. I piatti cambiano spesso: ecco cosa trovi di solito.</p>
-    </div>
-
-    <div class="menu-fissi">
-      <div class="fisso">
-        <h3>Menu fisso</h3>
-        <div class="cifra">11 €</div>
-        <ul>
-          <li>Primo</li>
-          <li>Secondo con contorno</li>
-          <li>Acqua e ¼ di vino</li>
-        </ul>
-      </div>
-      <div class="fisso ligure">
-        <div class="tag">Il più richiesto</div>
-        <h3>Tradizione ligure</h3>
-        <div class="cifra">12 €</div>
-        <ul>
-          <li>Primo al pesto genovese</li>
-          <li>Secondo con contorno</li>
-          <li>Acqua e ¼ di vino</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="carta-piatti">
-      <div class="categoria">
-        <div class="foto"><img src="../foto/trofie1.jpg" alt="Trofie al pesto" loading="lazy"></div>
-        <div class="testo">
-          <h3>Primi</h3>
-          <ul>
-            <li>Trofie al pesto</li>
-            <li>Pasta al pesto con patate e fagiolini</li>
-            <li>Tagliolini al nero di seppia</li>
-            <li>Spaghetti con calamari e piselli</li>
-            <li>Gnocchetti al ragù di salsiccia</li>
-          </ul>
-        </div>
-      </div>
-      <div class="categoria">
-        <div class="foto"><img src="../foto/trenette.jpg" alt="Pasta" loading="lazy"></div>
-        <div class="testo">
-          <h3>Secondi</h3>
-          <ul>
-            <li>Trippa in umido con patate</li>
-            <li>Pollo alla cacciatora con purè</li>
-            <li>Fritto misto di mare</li>
-            <li>Cozze</li>
-            <li>Caprese</li>
-          </ul>
-        </div>
-      </div>
-      <div class="categoria">
-        <div class="foto"><img src="../foto/pannacotta.jpg" alt="Panna cotta" loading="lazy"></div>
-        <div class="testo">
-          <h3>Dolci della casa</h3>
-          <ul>
-            <li>Panna cotta al cioccolato bianco con fragole</li>
-            <li>Dolce del giorno</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <p class="nota">Piatti a titolo d'esempio — chiedi il menu del giorno.</p>
-  </div>
-</section>
-
-<section id="asporto" class="asporto">
-  <div class="wrap">
-    <div class="box">
+<main>
+  <section class="apertura" aria-label="Trattoria Vegia Terralba">
+    <div class="wrap">
       <div>
-        <h2>Pranzo a casa o in ufficio</h2>
-        <p>Tutti i nostri piatti sono disponibili anche da asporto e con consegna a domicilio. Chiamaci o scrivici su WhatsApp, oppure ordina su Just Eat.</p>
-        <div class="actions">
-          <a href="tel:+393453309242" class="btn">📞 Ordina al telefono</a>
-          <a href="https://wa.me/393453309242?text=Buongiorno%2C%20vorrei%20ordinare%20da%20asporto" class="btn wa">💬 Ordina su WhatsApp</a>
+        <p class="etichetta">Piazza Terralba 34r · Genova</p>
+        <h1><small>Trattoria</small>Vegia Terralba</h1>
+        <p class="lead">Cucina genovese a pranzo, dal lunedì al sabato. Menu fisso da 11&nbsp;€ con acqua e vino compresi, anche da asporto.</p>
+        <div class="azioni">
+          <a href="tel:+393453309242" class="btn"><svg class="icona"><use href="#i-telefono"/></svg>Chiama e prenota</a>
+          <a href="https://wa.me/393453309242?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo" class="btn chiaro" target="_blank" rel="noopener"><svg class="icona"><use href="#i-messaggio"/></svg>Scrivi su WhatsApp</a>
         </div>
+        <p class="stato" data-stato hidden></p>
       </div>
-      <div class="icona">🛵</div>
-    </div>
-  </div>
-</section>
-
-<section id="orari">
-  <div class="wrap">
-    <div class="titolo"><h2>Orari e dove siamo</h2></div>
-    <div class="info">
-      <div class="card">
-        <h3>Orari</h3>
-        <table class="orari" id="tabella-orari">
-          <tr data-g="1"><td>Lunedì</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="2"><td>Martedì</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="3"><td>Mercoledì</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="4"><td>Giovedì</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="5"><td>Venerdì</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="6"><td>Sabato</td><td>12:00 – 15:00</td></tr>
-          <tr data-g="0" class="chiuso"><td>Domenica</td><td>Chiuso</td></tr>
-        </table>
-        <div class="contatti">
-          <div>📍 Piazza Terralba 34r, 16143 Genova</div>
-          <a href="tel:+393453309242">📞 345 330 9242</a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Trattoria+Vegia+Terralba+Piazza+Terralba+34r+Genova" target="_blank" rel="noopener">🧭 Indicazioni stradali →</a>
-        </div>
-      </div>
-      <div class="mappa">
-        <iframe title="Mappa Trattoria Vegia Terralba" loading="lazy"
-          src="https://www.google.com/maps?q=Trattoria+Vegia+Terralba,+Piazza+Terralba+34r,+Genova&output=embed"></iframe>
+      <div class="finestra">
+        <div class="anta sx" aria-hidden="true"></div>
+        <div class="cornice"><img src="../foto/trofie1.jpg" alt="Trofie al pesto" width="960" height="720"></div>
+        <div class="anta dx" aria-hidden="true"></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <div class="servizi">
+    <div class="wrap"><ul>
+      <li><svg class="icona"><use href="#i-piatto"/></svg><div>Cucina genovese<small>primi al pesto, trippa, pesce</small></div></li>
+      <li><svg class="icona"><use href="#i-vino"/></svg><div>Acqua e vino compresi<small>nel menu fisso</small></div></li>
+      <li><svg class="icona"><use href="#i-borsa"/></svg><div>Asporto e consegna<small>telefono, WhatsApp, Just Eat</small></div></li>
+      <li><svg class="icona"><use href="#i-sole"/></svg><div>Dehors<small>per mangiare fuori d'estate</small></div></li>
+    </ul></div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="intestazione">
+        <p class="etichetta">Il menu</p>
+        <h2>Menu fisso o alla carta</h2>
+        <p>A pranzo puoi scegliere uno dei due menu fissi oppure ordinare alla carta. I piatti cambiano spesso: chiedi quelli del giorno.</p>
+      </div>
+
+      <div class="fissi">
+        <article class="fisso">
+          <div class="testa">
+            <div><h3>Menu fisso</h3><p class="sotto">dal lunedì al sabato</p></div>
+            <p class="cifra">11&nbsp;€</p>
+          </div>
+          <ul>
+            <li>Primo</li>
+            <li>Secondo con contorno</li>
+            <li>Acqua e ¼ di vino</li>
+          </ul>
+        </article>
+        <article class="fisso ligure">
+          <div class="testa">
+            <div><h3>Tradizione ligure</h3><p class="sotto">con il primo al pesto</p></div>
+            <p class="cifra">12&nbsp;€</p>
+          </div>
+          <ul>
+            <li>Primo al pesto genovese</li>
+            <li>Secondo con contorno</li>
+            <li>Acqua e ¼ di vino</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="alla-carta">
+        <h3>Alla carta</h3>
+        <div class="portate">
+          <article class="portata">
+            <img src="../foto/trenette-patate.jpg" alt="Pasta al pesto con patate e fagiolini" width="960" height="498" loading="lazy" decoding="async">
+            <div class="testo">
+              <h4>Primi</h4>
+              <ul>
+                <li>Trofie al pesto</li>
+                <li>Pasta al pesto con patate e fagiolini</li>
+                <li>Tagliolini al nero di seppia</li>
+                <li>Spaghetti con calamari e piselli</li>
+                <li>Gnocchetti al ragù di salsiccia</li>
+              </ul>
+            </div>
+          </article>
+          <article class="portata">
+            <img src="../foto/trippa-umido.jpg" alt="Trippa in umido" width="960" height="780" loading="lazy" decoding="async">
+            <div class="testo">
+              <h4>Secondi</h4>
+              <ul>
+                <li>Trippa in umido con patate</li>
+                <li>Pollo alla cacciatora con purè</li>
+                <li>Fritto misto di mare</li>
+                <li>Cozze</li>
+                <li>Caprese</li>
+              </ul>
+            </div>
+          </article>
+          <article class="portata">
+            <img src="../foto/pannacotta.jpg" alt="Panna cotta" width="960" height="720" loading="lazy" decoding="async">
+            <div class="testo">
+              <h4>Dolci della casa</h4>
+              <ul>
+                <li>Panna cotta al cioccolato bianco con fragole</li>
+                <li>Dolce del giorno</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <p class="nota">Piatti a titolo di esempio: il menu del giorno può cambiare.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="asporto" class="asporto">
+    <div class="wrap colonne">
+      <div>
+        <p class="etichetta">Asporto e consegna</p>
+        <h2>Il pranzo anche a casa o in ufficio</h2>
+        <p>Tutti i piatti si possono ordinare da portare via o con la consegna a domicilio. Chiamaci o scrivici su WhatsApp; la consegna si può ordinare anche su Just Eat.</p>
+        <div class="azioni">
+          <a href="tel:+393453309242" class="btn ocra"><svg class="icona"><use href="#i-telefono"/></svg>Ordina al telefono</a>
+          <a href="https://wa.me/393453309242?text=Buongiorno%2C%20vorrei%20ordinare%20da%20asporto" class="btn chiaro" target="_blank" rel="noopener"><svg class="icona"><use href="#i-messaggio"/></svg>Ordina su WhatsApp</a>
+        </div>
+      </div>
+      <ol class="passi">
+        <li><div><strong>Scegli</strong><span>Dal menu del giorno o alla carta.</span></div></li>
+        <li><div><strong>Ordina</strong><span>Al telefono, su WhatsApp o su Just Eat.</span></div></li>
+        <li><div><strong>Ritira o ricevi</strong><span>Passi a prenderlo in Piazza Terralba 34r, oppure lo ricevi a domicilio.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="dove" class="dove">
+    <div class="wrap">
+      <div class="colonne">
+        <div>
+          <div class="intestazione">
+            <p class="etichetta">Orari e dove</p>
+            <h2>Piazza Terralba 34r</h2>
+            <p>16143 Genova, quartiere San Fruttuoso.</p>
+          </div>
+          <p class="stato" data-stato hidden></p>
+          <table class="orari" id="orari">
+            <tr data-g="1"><th scope="row">Lunedì</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="2"><th scope="row">Martedì</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="3"><th scope="row">Mercoledì</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="4"><th scope="row">Giovedì</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="5"><th scope="row">Venerdì</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="6"><th scope="row">Sabato</th><td>12:00 – 15:00</td></tr>
+            <tr data-g="0" class="chiuso"><th scope="row">Domenica</th><td>Chiuso</td></tr>
+          </table>
+          <p class="dehors"><svg class="icona"><use href="#i-sole"/></svg><span>D'estate c'è anche il dehors, per mangiare all'aperto.</span></p>
+          <div class="azioni">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Trattoria+Vegia+Terralba+Piazza+Terralba+34r+Genova" class="btn" target="_blank" rel="noopener"><svg class="icona"><use href="#i-direzione"/></svg>Indicazioni</a>
+            <a href="tel:+393453309242" class="btn chiaro"><svg class="icona"><use href="#i-telefono"/></svg>345 330 9242</a>
+          </div>
+        </div>
+        <figure class="mappa">
+          <img src="mappa.svg" alt="Mappa: la Trattoria Vegia Terralba è in Piazza Terralba, vicino al Mercato di Terralba" width="900" height="600" loading="lazy">
+          <div class="spillo sotto"><span>Vegia Terralba</span></div>
+          <figcaption>© OpenStreetMap</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Prima di pubblicare: aggiungere nel footer la P. IVA (obbligatoria per il sito di un'attività) e il link all'informativa privacy -->
 <footer>
   <div class="wrap">
-    <div>© <span id="anno"></span> Trattoria Vegia Terralba · Piazza Terralba 34r, Genova</div>
-    <div>Pranzo · Lun–Sab 12:00–15:00</div>
-    <div class="crediti">Foto di esempio da Wikimedia Commons: LazyBaby (CC BY 3.0), Superchilum (CC BY-SA 4.0), Popo le Chien (CC0), hiro (CC BY-SA 2.0).</div>
+    <div>
+      <p class="logo"><small>Trattoria</small><span>Vegia Terralba</span></p>
+      <p style="margin-top:12px">Piazza Terralba 34r, 16143 Genova</p>
+      <p><a href="tel:+393453309242">345 330 9242</a> · <a href="https://wa.me/393453309242" target="_blank" rel="noopener">WhatsApp</a></p>
+    </div>
+    <div class="destra">
+      <p>Pranzo · Lun – Sab, 12:00 – 15:00</p>
+      <p>© <span id="anno">2026</span> Trattoria Vegia Terralba</p>
+    </div>
+    <p class="crediti">Foto di esempio da Wikimedia Commons: Superchilum (CC BY-SA 4.0), LazyBaby (CC BY 3.0), Francesco Tosoni (CC BY-SA 4.0), hiro (CC BY-SA 2.0). Mappa: dati © OpenStreetMap contributors (ODbL).</p>
   </div>
 </footer>
 
 <div class="barra-mobile">
-  <a href="tel:+393453309242" class="btn">📞 Chiama</a>
-  <a href="https://wa.me/393453309242" class="btn wa">💬 WhatsApp</a>
+  <a href="tel:+393453309242" class="btn"><svg class="icona"><use href="#i-telefono"/></svg>Chiama</a>
+  <a href="https://wa.me/393453309242?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo" class="btn chiaro" target="_blank" rel="noopener"><svg class="icona"><use href="#i-messaggio"/></svg>WhatsApp</a>
 </div>
 
 <script>
+  // Orari di apertura (0 = domenica). Se cambiano, basta modificare questa riga e la tabella.
+  const ORARI = { 1: ["12:00", "15:00"], 2: ["12:00", "15:00"], 3: ["12:00", "15:00"], 4: ["12:00", "15:00"], 5: ["12:00", "15:00"], 6: ["12:00", "15:00"] };
+  const GIORNI = ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"];
+
+  // Ora di Genova, anche se chi guarda il sito è in un altro fuso orario
+  const parti = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Rome", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+  }).formatToParts(new Date()).map(p => [p.type, p.value]));
+  const oggi = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(parti.weekday);
+  const adesso = +parti.hour * 60 + +parti.minute;
+  const minuti = h => { const [o, m] = h.split(":"); return o * 60 + +m; };
+
+  let aperto = false, testo;
+  const turno = ORARI[oggi];
+  if (turno && adesso >= minuti(turno[0]) && adesso < minuti(turno[1])) {
+    aperto = true;
+    testo = `<b>Aperto ora</b> · chiude alle ${turno[1]}`;
+  } else if (turno && adesso < minuti(turno[0])) {
+    testo = `<b>Chiuso</b> · apre oggi alle ${turno[0]}`;
+  } else {
+    for (let i = 1; i <= 7; i++) {
+      const g = (oggi + i) % 7;
+      if (ORARI[g]) { testo = `<b>Chiuso</b> · riapre ${i === 1 ? "domani" : GIORNI[g]} alle ${ORARI[g][0]}`; break; }
+    }
+  }
+  document.querySelectorAll("[data-stato]").forEach(el => {
+    el.innerHTML = testo;
+    el.classList.add(aperto ? "aperto" : "chiuso");
+    el.hidden = false;
+  });
+  document.querySelector(`#orari tr[data-g="${oggi}"]`)?.classList.add("oggi");
   document.getElementById("anno").textContent = new Date().getFullYear();
-  const riga = document.querySelector('#tabella-orari tr[data-g="' + new Date().getDay() + '"]');
-  if (riga) riga.classList.add("oggi");
 </script>
 </body>
 </html>
